@@ -20,13 +20,19 @@ class Admin_model extends CI_Model
 	}
 
 	function este_usuario($id){	
-		$consulta = "SELECT * FROM usuario WHERE id=$id";
+		$consulta = "SELECT * FROM usuario WHERE id='$id'";
 		$query = $this->db->query($consulta);
 		return $query->result();
 	}
 
 	function esta_hab($nro_hab){	
-		$consulta = "SELECT * FROM detalle_habitacion WHERE nro_hab=$nro_hab";
+		$consulta = "SELECT * FROM detalle_habitacion WHERE nro_hab='$nro_hab'";
+		$query = $this->db->query($consulta);
+		return $query->result();
+	}
+	
+	function este_tipo_hab($tipo_hab){	
+		$consulta = "SELECT * FROM tipo_habitacion WHERE tipo='$tipo_hab'";
 		$query = $this->db->query($consulta);
 		return $query->result();
 	}
@@ -51,17 +57,37 @@ class Admin_model extends CI_Model
 		
 		$edit = "UPDATE usuario 
 					SET tipo='$tipo_user', nombre='$nombre', apellido='$apellido', clave='$clave', usuario='$usuario'
-					WHERE id=$id";
+					WHERE id='$id'";
  		
 		$this->db->query($edit);
+	}
+	
+	function existe_usuario($user){
+		$consulta = "SELECT usuario FROM usuario WHERE usuario = '$user'";
+		$query = $this->db->query($consulta);
+		
+		if($query->num_rows()==0){
+			return 'TRUE';
+		}else{
+			return 'FALSE';
+		}
 	}
 
 	function editar_hab($nro_hab,$tipo,$estado){
 		
 		$edit = "UPDATE detalle_habitacion 
 					SET tipo_hab='$tipo', estatus='$estado'
-					WHERE nro_hab=$nro_hab";
+					WHERE nro_hab='$nro_hab'";
  		
+		$this->db->query($edit);
+	}
+	
+	function editar_tipo_hab($tipo, $costo, $info){
+		
+		$edit = "UPDATE tipo_habitacion 
+					SET costo='$costo', info='$info'
+					WHERE tipo='$tipo'";
+
 		$this->db->query($edit);
 	}
 

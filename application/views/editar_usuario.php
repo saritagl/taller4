@@ -5,10 +5,10 @@
 		<hr>
 		<?php
 			foreach($usuario as $fila)
-			{	
+			{
 		?>
 		<div class="input-field col s6">
-			<input id="nombre" name="nombre" type="text" class="validate" value="<?=$fila->nombre?>">
+			<input id="nombre" name="nombre" type="text" class="validate" value="<?=$fila->nombre?>" >
 			<label for="nombre">Nombre</label>
 		</div>
 		<div class="input-field col s6">
@@ -29,12 +29,16 @@
 				<option value="gerente" <?php if($fila->tipo=="gerente") echo "selected";?>>Gerente</option>
 				<option value="recepcionista" <?php if($fila->tipo=="recepcionista") echo "selected";?>>Recepcionista</option>
 			</select>
-			<label>Tipo de Usuario</label>
+			<label>Tipo de usuario</label>
 		</div>
 		<input type="hidden" name="id" value="<?=$fila->id?>">
 		<?php
-			}				
+				
+			}
 		?>
+		<div class="col s12 push-s4 pull-s4">
+			<span class="red-text"><?php echo form_error('nombre');?></span>
+		</div>
 		<div class="col s12">
 		<br>
 		<button class="btn waves-effect waves-light right" type="submit">Aceptar

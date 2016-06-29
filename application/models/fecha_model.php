@@ -57,5 +57,12 @@ class Fecha_model extends CI_Model
 		$delete = "DELETE FROM reservacion WHERE id=$id";
 		$this->db->query($delete);
 	}
+	
+	function datos_hab()
+	{
+		$consulta = "SELECT * FROM tipo_habitacion";
+		$query = $this->db->query($consulta);
+		return $query->result();
+	}
 }
 ?>

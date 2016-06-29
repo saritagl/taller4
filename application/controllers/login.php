@@ -29,14 +29,10 @@ class Login extends CI_Controller {
 			
 			foreach ($type as $a) {
 				if($a == "administrador"){
-					/*$data['contenido'] = $this->load->view('inicio_admin','',true);
-					$this->load->view('includes/template',$data);*/
 					redirect(base_url().'login/inicio_admin');
 				}elseif($a == "gerente"){
 					redirect(base_url().'login/inicio_gerente');
 				}else{
-					/*$data['contenido'] = $this->load->view('inicio','',true);
-					$this->load->view('includes/template',$data);*/
 					redirect(base_url().'login/inicio');			
 				}
 			 }		

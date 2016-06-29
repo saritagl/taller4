@@ -5,8 +5,9 @@
 	<hr><br>
 	<ul class="collection">
 
-		<li>
-			<div class="collapsible-header teal white-text center"><b>Individual</b></div>
+		<li class="collection-item teal">
+			<a class="white-text center"><b>Individual</b></a>
+			<a class="secondary-content white-text" href="/admin/editar_tipo_hab?tipo=individual"><i class="material-icons">mode_edit</i></a>
 		</li>
 		<?php
 			$hab_este_tipo=0;
@@ -53,8 +54,9 @@
 				NO HAY HABITACIONES DE ESTE TIPO
 		<?php endif;?>	
 		
-		<li>
-			<div class="collapsible-header teal white-text center"><b>Matrimonial</b></div>
+		<li class="collection-item teal">
+			<a class="white-text center"><b>Matrimonial</b></a>
+			<a class="secondary-content white-text" href="/admin/editar_tipo_hab?tipo=matrimonial"><i class="material-icons">mode_edit</i></a>
 		</li>
 		<?php
 			$hab_este_tipo=0;
@@ -97,9 +99,9 @@
 		?>
 				NO HAY HABITACIONES DE ESTE TIPO
 		<?php endif;?>	
-
-		<li>
-			<div class="collapsible-header teal white-text center"><b>Mixtal</b></div>
+		<li class="collection-item teal">
+			<a class="white-text center"><b>Mixta</b></a>
+			<a class="secondary-content white-text" href="/admin/editar_tipo_hab?tipo=mixta"><i class="material-icons">mode_edit</i></a>
 		</li>
 		<?php
 			$hab_este_tipo=0;
@@ -142,9 +144,9 @@
 		?>
 				NO HAY HABITACIONES DE ESTE TIPO
 		<?php endif;?>
-
-		<li>
-			<div class="collapsible-header teal white-text center"><b>Suite</b></div>
+		<li class="collection-item teal">
+			<a class="white-text center"><b>Suite</b></a>
+			<a class="secondary-content white-text" href="/admin/editar_tipo_hab?tipo=suite"><i class="material-icons">mode_edit</i></a>
 		</li>
 		<?php
 			$hab_este_tipo=0;
@@ -218,7 +220,7 @@
 	</div>
 	<div id="h<?=$fila->nro_hab?>" class="modal">
 		<div class="modal-content">
-			<h5 class="center">¿Esta seguro que desea eliminar esta habitación?</h5><hr>
+			<h5 class="center">¿Está seguro que desea eliminar esta habitación?</h5><hr>
 			<p class="center">
 				Número: <?=$fila->nro_hab?> <br>
 				Tipo: <?=$fila->tipo_hab?> <br>

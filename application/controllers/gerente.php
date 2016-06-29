@@ -25,9 +25,27 @@ class Gerente extends CI_Controller {
 			$fecha_ini = $this->input->post('date_ini');
 			$fecha_fin = $this->input->post('date_fin');
 			
+			$data['datos']=$this->fecha_model->datos_hab();
 			$data['hab_disp'] = $this->fecha_model->hab_disponibles($fecha_ini,$fecha_fin);
 			
 			$dat['contenido'] = $this->load->view('hab_disponibles',$data,true);
+			$this->load->view('includes/template',$dat);
+		}
+	}
+	
+	public function ocupadas(){
+		$this->form_validation->set_rules('date_ini', '', 'callback_es_fecha_ocupadas');
+		
+		if($this->form_validation->run()== FALSE)
+		{
+			$data['contenido'] = $this->load->view('fecha_ocupadas','',true);
+			$this->load->view('includes/template',$data);
+		}else{
+			$fecha_ini = $this->input->post('date_ini');
+			$fecha_fin = $this->input->post('date_fin');
+			
+			$data['hab_ocup'] = $this->fecha_model->hab_ocupadas($fecha_ini,$fecha_fin);
+			$dat['contenido'] = $this->load->view('hab_ocupadas',$data,true);
 			$this->load->view('includes/template',$dat);
 		}
 	}
@@ -55,7 +73,7 @@ class Gerente extends CI_Controller {
 					}
 
 				}else{
-					$this->form_validation->set_message('es_fecha_disp', 'La Fecha debe ser mayor que la fecha actual');
+					$this->form_validation->set_message('es_fecha_disp', 'Los campos deben ser mayores a la fecha actual');
 					return FALSE;
 				}
 			}else{
@@ -64,6 +82,34 @@ class Gerente extends CI_Controller {
 			}
 		}else{
 			$this->form_validation->set_message('es_fecha_disp', 'Debe ingesar alguna fecha');
+			return FALSE;
+		}
+	}
+	
+	public function es_fecha_ocupadas($fecha_ini)
+	{
+		$fecha_actual = date('Y-m-d');
+		$fecha_fin = $this->input->post('date_fin');
+
+		if($fecha_ini!=NULL && $fecha_fin!=NULL)
+		{
+			if($fecha_ini<$fecha_fin)
+			{			
+				$ini = date_create($fecha_ini);
+				$fin = date_create($fecha_fin);
+				$interval = $ini->diff($fin);
+				if($interval->format('%a') <= 180){
+					return TRUE;
+				}else{
+					$this->form_validation->set_message('es_fecha_ocupadas', 'No se puede hacer una reservación de más de 6 meses');
+					return FALSE;
+				}
+			}else{
+				$this->form_validation->set_message('es_fecha_ocupadas', 'La Fecha Inicial debe ser menor que la Fecha Final');
+				return FALSE;
+			}
+		}else{
+			$this->form_validation->set_message('es_fecha_ocupadas', 'Debe ingesar alguna fecha');
 			return FALSE;
 		}
 	}

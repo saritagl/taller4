@@ -39,7 +39,7 @@
 		<p class="center">
 			Nombre y Apellido: <?=$fila->nombre?> <?=$fila->apellido?><br>
 			Usuario: <?=$fila->usuario?><br>
-			Tipo Usuario: <?=$fila->tipo?>
+			Tipo usuario: <?=$fila->tipo?>
 		</p>
 	</div>
 </div>
@@ -49,7 +49,7 @@
 		<p class="center">
 			Nombre y Apellido: <?=$fila->nombre?> <?=$fila->apellido?><br>
 			Usuario: <?=$fila->usuario?><br>
-			Tipo Usuario: <?=$fila->tipo?>
+			Tipo usuario: <?=$fila->tipo?>
 		</p>
 	</div>
 	<div class="modal-footer">

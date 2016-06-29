@@ -6,6 +6,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		$(".button-collapse").sideNav();
+		
 		$('.modal-trigger').leanModal();
 
 		var cambio = false;
@@ -67,7 +69,7 @@
 	});
 </script>
 </body>
-<footer class="container row white black-text">
+<footer class="container row white black-text ">
     <div class="col s12 z-depth-2">
 		© 2016 Copyright
 			<div class="right">

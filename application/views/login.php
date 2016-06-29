@@ -13,13 +13,17 @@
 				<input name="password" id="password" type="password" class="validate">
 				<label class="active" for="password">Contraseña</label>
 			</div>
+			
+			<div class="col s6 push-s3 pull-s3">
+				<span class="red-text"><?php echo form_error('user');?></span>
+			</div>
 			<br>
-			<span class="red-text"><?php echo form_error('user');?></span>
+			<div class="col s12">
 			<br>
-			<br>
-			<button class="btn waves-effect waves-light col s4 push-s4 pull-s4" type="submit">entrar
- 				<i class="material-icons right">send</i>
-  			</button>
+				<button class="btn waves-effect waves-light col s4 push-s4 pull-s4" type="submit">entrar
+ 					<i class="material-icons right">send</i>
+  				</button>
+  			</div>
 		</form>
 	</div>
 </div>

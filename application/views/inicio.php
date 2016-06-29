@@ -3,7 +3,7 @@
 		Av. Salvador Feo la Cruz, casa parcela Nro. SN Naguanagua, Edo. Carabobo.<br>
 		Naguanagua, Carabobo, Venezuela<br>
 		Teléfono: +58-241-5153000<br>
-		info@hoteleshesperia.com.ve
+		info@sistemahotel.com.ve
 	</p>
 </div>			
 <br>

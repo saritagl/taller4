@@ -1,31 +1,31 @@
 <br>
 <div class="col s6 push-s3 pull-s3 z-depth-3">
-	<form id="login" action="/admin/confirmacion_insertar_hab" method="post">
-		<h5 class="center teal-text"><b>Insertar Habitación</b></h5>
+	<form id="login" action="/admin/confirmacion_editar_tipo_hab" method="post">
+		<h5 class="center teal-text"><b>Editar Tipo de Habitación</b></h5>
 		<hr>
+		<?php
+			foreach($hab as $fila)
+			{	
+		?>
 		<div class="input-field col s8 push-s2 pull-s2">
-			<select name="tipo_hab">
-				<option value="" disabled selected>Seleccione un tipo</option>
-				<option value="individual">Individual</option>
-				<option value="matrimonial">Matrimonial</option>
-				<option value="mixta">Mixta</option>
-				<option value="suite">Suite</option>
-			</select>
-			<label>Tipo de Habitación</label>
+			<input disabled id="tipo_hab" type="text" class="validate black-text" value="<?=$fila->tipo?>">
+			<label for="tipo_hab" class="black-text">Tipo de Habitación</label>
 		</div>
 		<div class="input-field col s8 push-s2 pull-s2">
-			<select name="estado">
-				<option value="" disabled selected>Seleccione un estado</option>
-				<option value="habilitada">Habilitada</option>
-				<option value="deshabilitada">Deshabilitada</option>
-			</select>
-			<label>Estado</label>
+			<input id="costo" name="costo" type="number" class="validate" value="<?=$fila->costo?>">
+			<label for="costo">Costo de Habitación</label>
 		</div>
-		
+		<div class="input-field col s8 push-s2 pull-s2">
+			<textarea id="info" name="info"class="materialize-textarea"><?=$fila->info?></textarea>
+			<label for="info">Descripción</label>
+		</div>
+		<input type="hidden" name="tipo_hab" value="<?=$fila->tipo?>">
+		<?php
+			}				
+		?>
 		<div class="col s6 push-s3 pull-s3">
 			<span class="red-text"><?php echo form_error('tipo_hab');?></span>
 		</div>
-		
 		<div class="col s12">
 		<br>
 		<button class="btn waves-effect waves-light right" type="submit">Aceptar

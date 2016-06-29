@@ -31,6 +31,9 @@
 		<?php
 			}				
 		?>
+		<div class="col s6 push-s3 pull-s3">
+			<span class="red-text"><?php echo form_error('tipo_hab');?></span>
+		</div>
 		<div class="col s12">
 		<br>
 		<button class="btn waves-effect waves-light right" type="submit">Aceptar

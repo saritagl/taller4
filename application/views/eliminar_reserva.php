@@ -10,7 +10,7 @@
 	?>
 			<li class="collection-item">
 				<div>
-					<a class="black-text"><?=$fila->nombre?> <?=$fila->apellido?> - HAB <?=$fila->nro_hab?></a>
+					<a class="black-text"><?=$fila->nombre?> <?=$fila->apellido?> - HAB <?=$fila->nro_hab?> - <?=$fila->fecha_ini?> -<?=$fila->fecha_fin?> </a>
 					<a class="modal-trigger teal-text secondary-content" href="#<?=$fila->id?>"><i class="material-icons">delete</i></a>
 				</div>
 			</li>	

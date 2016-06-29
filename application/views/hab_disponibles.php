@@ -3,11 +3,23 @@
 	<h5 class="center">Habitaciones Disponibles</h5>
 	<hr><br>
 	<ul class="popout collapsible" data-collapsible="accordion">
-		<li>
-			<div class="collapsible-header teal-text"><i class="material-icons">local_hotel</i>Individual</div>
-			<div class="collapsible-body">
-				<p>Capacidad de Personas: 1<br>Precio:5000 Bs<br>Dotada con cama individual, cuarto de baño, con bañera y secador de pelo. Además de aire acondicionado integral, teléfono con discado directo, TV por cable, servicio de internet WI FI.</p>
+		<li class="collection-item">
+			<div class="collapsible-header">
+				<a class="teal-text"><i class="material-icons">local_hotel</i></a>
+				<a class="teal-text">Individual</a>
+				<a class="secondary-content teal-text"><i class="material-icons">info_outline</i></a>
 			</div>
+			<?php
+				foreach($datos as $row){
+					if($row->tipo == 'individual'):
+			?>
+						<div class="collapsible-body">
+							<p>Capacidad de Personas: 1<br>Precio: <?=$row->costo?> Bs. <br><?=$row->info?></p>
+						</div>
+			<?php
+					endif;
+				}
+			?>
 			<br>
 			<div class="center">
 				<?php
@@ -27,11 +39,23 @@
 			</div>
 			<br>
 		</li>
-		<li>
-			<div class="collapsible-header teal-text"><i class="material-icons">local_hotel</i>Matrimonial</div>
-			<div class="collapsible-body">
-				<p>Capacidad de Personas: 2<br>Precio:10000 Bs<br>Dotada con cama matrimonial, cuarto de baño, con bañera y secador de pelo. Además de aire acondicionado integral, teléfono con discado directo, TV por cable, servicio de internet WI FI.</p>
+		<li class="collection-item">
+			<div class="collapsible-header">
+				<a class="teal-text"><i class="material-icons">local_hotel</i></a>
+				<a class="teal-text">Matrimonial</a>
+				<a class="secondary-content teal-text"><i class="material-icons">info_outline</i></a>
 			</div>
+			<?php
+				foreach($datos as $row){
+					if($row->tipo=='matrimonial'):
+			?>
+						<div class="collapsible-body">
+							<p>Capacidad de Personas: 2<br>Precio: <?=$row->costo?> Bs. <br><?=$row->info?></p>
+						</div>
+			<?php
+					endif;
+				}
+			?>
 			<br>
 			<div class="center">
 				<?php
@@ -52,11 +76,23 @@
 			</div>
 			<br>
 		</li>
-		<li>
-			<div class="collapsible-header teal-text"><i class="material-icons">local_hotel</i>Mixta</div>
-			<div class="collapsible-body">
-				<p>Capacidad de Personas: 3<br>Precio:20000 Bs<br>Dotada con cama matrimonial y cama indivual, cuarto de baño con bañera y secador de pelo. Además de aire acondicionado integral, teléfono con discado directo, TV por cable, servicio de internet WI FI.</p>
+		<li class="collection-item">
+			<div class="collapsible-header">
+				<a class="teal-text"><i class="material-icons">local_hotel</i></a>
+				<a class="teal-text">Mixta</a>
+				<a class="secondary-content teal-text"><i class="material-icons">info_outline</i></a>
 			</div>
+			<?php
+				foreach($datos as $row){
+					if($row->tipo=='mixta'):
+			?>
+						<div class="collapsible-body">
+							<p>Capacidad de Personas: 3<br>Precio: <?=$row->costo?> Bs. <br><?=$row->info?></p>
+						</div>
+			<?php
+					endif;
+				}
+			?>
 			<br>
 			<div class="center">
 				<?php
@@ -76,11 +112,23 @@
 			</div>
 			<br>
 		</li>
-		<li>
-			<div class="collapsible-header teal-text"><i class="material-icons">local_hotel</i>Suite</div>
-			<div class="collapsible-body">
-				<p>Capacidad de Personas: 2<br>Precio:30000 Bs<br>Dotada con cama king 4x4, cuarto de baño con bañera y secador de pelo. Además de aire acondicionado integral, teléfono con discado directo, TV por cable, servicio de internet WI FI, caja de seguridad, servicio Room Service y Minibar.</p>
+		<li class="collection-item">
+			<div class="collapsible-header">
+				<a class="teal-text"><i class="material-icons">local_hotel</i></a>
+				<a class="teal-text">Suite</a>
+				<a class="secondary-content teal-text"><i class="material-icons">info_outline</i></a>
 			</div>
+			<?php
+				foreach($datos as $row){
+					if($row->tipo == 'suite'):
+			?>
+						<div class="collapsible-body">
+							<p>Capacidad de Personas: 2<br>Precio:<?=$row->costo?> Bs. <br><?=$row->info?></p>
+						</div>
+			<?php
+					endif;
+				}
+			?>
 			<br>
 			<div class="center">
 				<?php

@@ -108,9 +108,10 @@
 		</div>
 	</div>
 	<?php }?>
-	
-	<button class="btn waves-effect waves-light col s2 push-s5 pull-s5" type="button" onClick="window.location.href='/login/inicio'">Salir</button>
-	
+	<div class="col s12">
+	<br>
+		<button class="btn waves-effect waves-light col s2 push-s5 pull-s5" type="button" onClick="window.location.href='/login/inicio'">Salir</button>
+	</div>
 </form>
 
 <script type="text/javascript">
